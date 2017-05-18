@@ -1,0 +1,67 @@
+{% import "bootstrap/wtf.html" as wtf %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Lavazza</title>
+  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/animate.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/font-awesome.min.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/font.css')}}" type="text/css" cache="false" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/plugin.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/app.css')}}" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="js/ie/respond.min.js" cache="false"></script>
+    <script src="js/ie/html5.js" cache="false"></script>
+    <script src="js/ie/fix.js" cache="false"></script>
+  <![endif]-->
+</head>
+
+<body style="background: url(http://media.allyou.net/7/7817/images/4893955/1.jpg.5000x500_q90.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+  <section id="content" class="m-t-lg wrapper-md animated fadeInUp" >
+  <br>
+<br>
+<br>
+  <br>
+<br>
+<br>
+    <div class="row m-n" >
+      <div class="col-md-4 col-md-offset-4 m-t-lg">
+        <section class="panel">
+          <header class="panel-heading text-center">
+            Sign in
+          </header>
+          <form class="panel-body" class="form-signin" method="POST" action="/login">
+         
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.email) }}
+        {{ wtf.form_field(form.password) }}
+    
+       
+      
+           
+            <button type="submit" class="btn btn-info">Sign in</button>
+      
+          </form>
+        </section>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+
+  <!-- / footer -->
+  <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+  <!-- Bootstrap -->
+  <script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+  <!-- app -->
+  <script src="{{url_for('static', filename='js/app.js')}}"></script>
+  <script src="{{url_for('static', filename='js/app.plugin.js')}}"></script>
+  <script src="{{url_for('static', filename='js/app.data.js')}}"></script>
+</body>
+</html>

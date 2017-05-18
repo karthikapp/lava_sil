@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+<div class="col-lg-4" ng-controller="LineCtrl">
+  <section class="panel">
+    <header class="panel-heading bg-primary lter no-borders" style="background-color: #4E342E;">
+      <div class="clearfix">
+
+        <div class="clear">
+        <div class="h3 m-t-xs m-b-xs" style="font-family: 'Abel', sans-serif;"> YTD Revenue </div>
+
+        </div>                
+      </div>
+    </header>
+    <div class="clearfix text-center m-t">
+      <div class="inline">
+        <h1 style="font-size: 45px;font-family: 'Abel', sans-serif;">// ytdrevenue | INR//</h1>
+        <br>
+        <br>
+        <p></p> 
+
+      </div>
+    </div>
+  </section>
+</div>
+<div class="col-lg-4">
+ <section class="panel">
+  <header class="panel-heading bg-primary lter no-borders" style="background-color: #b71c1c;">
+    <div class="clearfix">
+
+      <div class="clear">
+        <div class="h3 m-t-xs m-b-xs" style="font-family: 'Abel', sans-serif;"> YTD Revenue by Financial Year </div>
+
+      </div>                
+    </div>
+  </header>
+  <div class="clearfix text-center m-t" ng-controller="LineCtrl">
+    <canvas id="line" class="chart chart-line" chart-data="data"
+    chart-labels="labels" chart-series="series" chart-options="options"
+    chart-dataset-override="datasetOverride" chart-click="onClick">
+  </canvas>
+  <div class="inline">
+
+    <h1 style="font-size: 45px;font-family: 'Abel', sans-serif;"></h1>
+    <br>
+
+    <br> 
+    <p></p>
+
+  </div>
+</div>
+
+</section>
+</div>
+
+
+<div class="col-lg-4" ng-controller="DoughnutCtrl">
+  <section class="panel">
+    <header class="panel-heading bg-primary lter no-borders" style="background-color: #4E342E;">
+      <div class="clearfix">
+
+        <div class="clear">
+          <div class="h3 m-t-xs m-b-xs" style="font-family: 'Abel', sans-serif;"> YTD Revenue By Zone </div>
+
+        </div>                
+      </div>
+    </header>
+    <div class="clearfix text-center m-t">
+    <canvas id="doughnut" class="chart chart-pie"
+  chart-data="data" chart-labels="labels" chart-options="options">
+</canvas> 
+      <div class="inline">
+        <h1 style="font-size: 45px;font-family: 'Abel', sans-serif;"></h1>
+        <br>
+        <br>
+        <p></p> 
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+<div class="col-lg-12" ng-controller="BarCtrl">
+  <section class="panel">
+    <header class="panel-heading bg-primary lter no-borders" style="background-color: #1565C0;">
+      <div class="clearfix">
+
+        <div class="clear">
+          <div class="h3 m-t-xs m-b-xs" style="font-family: 'Abel', sans-serif;"> YTD Revenue by Branch </div>
+
+        </div>                
+      </div>
+    </header>
+    <div class="clearfix text-center m-t">
+    <canvas id="bar" class="chart chart-bar"
+  chart-data="data" chart-labels="labels" chart-options="options"> chart-series="series"
+</canvas
+    
+   </div>
+ </section>
+</div>
+</div>
+<div class="col-lg-12">
+  <section class="panel">
+    <header class="panel-heading bg-primary lter no-borders" style="background-color: #455A64;">
+      <div class="clearfix">
+
+        <div class="clear">
+          <div class="h3 m-t-xs m-b-xs" style="font-family: 'Abel', sans-serif;"> Top 10 Customers by YTD Revenue</div>
+        </div>                
+      </div>
+    </header>
+    
+    <div class="clearfix text-center m-t" ng-controller="BarCustCtrl">
+      <div class="col-lg-12">
+       <canvas id="bar" class="chart chart-bar"
+  chart-data="data" chart-labels="labels" chart-options="options"> chart-series="series"
+</canvas
+    
+   </div>
+        <div class="inline" ng-style ="style">
+          <h1 style="font-size: 45px;font-family: 'Abel', sans-serif;"> </h1> 
+          <br> 
+        
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+
+
+
+
+
+</p>
+{% endblock %}

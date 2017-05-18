@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+
+
+<div class="col-lg-8" ng-controller="Liffe_Ctrl">
+  <section class="panel">
+    <header class="panel-heading bg-primary lter no-borders" style="background-color: #1565C0;">
+      <div class="clearfix">
+
+        <div class="clear">
+          <div class="h3 m-t-xs m-b-xs" style="font-family: 'Abel', sans-serif;"> Robusta Coffee - LIFFE (London) US $/tonne</div>
+
+        </div>                
+      </div>
+    </header>
+    <div class="clearfix text-center m-t">
+     <canvas id="line" class="chart chart-line" chart-data="data"
+     chart-labels="labels" chart-series="series" chart-options="options"
+     chart-dataset-override="datasetOverride" chart-click="onClick"
+   </canvas> 
+ </div>
+</section>
+</div>
+
+<div class="col-lg-6" ng-controller="Line_sugarCtrl">
+  <section class="panel">
+    <header class="panel-heading bg-primary lter no-borders" style="background-color: #b71c1c;">
+      <div class="clearfix">
+
+        <div class="clear">
+          <div class="h3 m-t-xs m-b-xs" style="font-family: 'Abel', sans-serif;"> Sugar WPI Index Predictions </div>
+
+        </div>                
+      </div>
+    </header>
+
+    <div class="clearfix text-center m-t">
+     <canvas id="line" class="chart chart-line" chart-data="data"
+     chart-labels="labels" chart-series="series" chart-options="options"
+     chart-dataset-override="datasetOverride" chart-click="onClick">
+   </canvas>
+
+   <div class="inline">
+
+
+
+
+   </div>
+ </div>
+</section>
+</div>
+
+
+
+
+
+
+
+<div class="col-lg-6" ng-controller="Line_milkCtrl">
+  <section class="panel">
+    <header class="panel-heading bg-primary lter no-borders" style="background-color: #455A64;">
+      <div class="clearfix">
+
+        <div class="clear">
+          <div class="h3 m-t-xs m-b-xs" style="font-family: 'Abel', sans-serif;"> Milk WPI Index Predictions</div>
+        </div>                
+      </div>
+    </header>
+    <p></p>
+    <canvas id="line" class="chart chart-line" chart-data="data"
+    chart-labels="labels" chart-series="series" chart-options="options"
+    chart-dataset-override="datasetOverride" chart-click="onClick">
+  </canvas>
+
+</div>
+<div class="inline">
+
+
+</div>
+</div>
+
+</div>
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

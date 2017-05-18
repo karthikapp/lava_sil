@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  
+  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-resource.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.4/numeral.min.js"></script>
+  <script src="{{ url_for('static', filename='js/chart.js/dist/Chart.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/angular-chart.min.js')}}"></script>
+ <script src="{{ url_for('static', filename='scripts/tc-charts.min.js')}}"></script>
+ <script type="text/javascript" src="{{url_for('static', filename='scripts/app.js')}}">
+
+  </script>
+
+ 
+  <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/animate.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/font-awesome.min.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/font.css')}}" type="text/css" cache="false" />  
+  <link rel="stylesheet" href="{{url_for('static', filename='js/calendar/bootstrap_calendar.css')}}" type="text/css" cache="false" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/plugin.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/app.css')}}" type="text/css" />
+    <!-- endbuild -->
+  </head>
+  <body ng-app="myApp">
+   <section class="vbox">
+    <header class="header bg-black navbar navbar-inverse pull-in">
+      <div class="navbar-header nav-bar aside dk">
+        <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-primary">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="#/" class="nav-brand" data-toggle="fullscreen"><img src="http://alescis.com/wp-content/themes/Alescis_Theme/assets/images/USA_Lavazza-LOGO-black.png"></a>
+        <a class="btn btn-link visible-xs" data-toggle="collapse" data-target=".navbar-collapse">
+          <i class="fa fa-comment-o"></i>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+         
+         
+        </ul>
+        <form class="navbar-form navbar-left m-t-sm" role="search">
+          <div class="form-group">
+            <div class="input-group input-s">
+              <input type="text" class="form-control input-sm no-border dk text-white" placeholder="Search">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-sm btn-primary btn-icon"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </div>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="hidden-xs">
+            <a href="#/" class="dropdown-toggle dk" data-toggle="dropdown">
+              <i class="fa fa-bell-o text-white"></i>
+              <span class="badge up bg-danger m-l-n-sm">2</span>
+            </a>
+            <section class="dropdown-menu animated fadeInUp input-s-lg">
+              <section class="panel bg-white">
+                <header class="panel-heading">
+                  <strong>You have <span class="count-n">2</span> notifications</strong>
+                </header>
+                <div class="list-group">
+                  <a href="#/" class="media list-group-item">
+                    <span class="pull-left thumb-sm">
+                      <img src="http://alescis.com/wp-content/themes/Alescis_Theme/assets/images/USA_Lavazza-LOGO-black.png" alt="John said" class="img-circle">
+                    </span>
+                    <span class="media-body block m-b-none">
+                      Use awesome animate.css<br>
+                      <small class="text-muted">28 Aug 13</small>
+                    </span>
+                  </a>
+                  <a href="#" class="media list-group-item">
+                    <span class="media-body block m-b-none">
+                      1.0 initial released<br>
+                      <small class="text-muted">27 Aug 13</small>
+                    </span>
+                  </a>
+                </div>
+                <footer class="panel-footer text-sm">
+                  <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+                  <a href="#">See all the notifications</a>
+                </footer>
+              </section>
+            </section>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle aside-sm dker" data-toggle="dropdown">
+               <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu animated fadeInLeft">
+              <li>
+                <a href="#">Settings</a>
+              </li>
+              <li>
+                <a href="profile.html">Profile</a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="badge bg-danger pull-right">3</span>
+                  Notifications
+                </a>
+              </li>
+              <li>
+                <a href="docs.html">Help</a>
+              </li>
+              <li>
+                <a href="/logout">Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section>
+      <section class="hbox stretch">
+        <aside class="aside bg-dark dk" id="nav">
+          <section class="vbox">
+            <section class="scrollable">
+              <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px">
+                <nav class="nav-primary hidden-xs" data-ride="collapse">
+                  <ul class="nav">
+                    
+                    <li>
+                      <a href="/futures">
+                        <span style="font-family: 'Abel', sans-serif;"> Futures </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/predictions">
+                        <span style="font-family: 'Abel', sans-serif;"> Predictions </span>
+                      </a>
+                    </li>
+                   
+                  </ul>
+                </nav>
+              </div>
+            </section>
+          </section>
+        </aside>
+        <section class="hbox">
+          <div class="wrapper" style="background-color: #E0E0E0;min-height: 800px;">
+             <div id="content">
+             {% block content %}
+             {% endblock %}
+             </div>
+           
+            </div>
+        </section>
+      
+      </section>
+    </section>
+   
+  </section>
+  <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+  <!-- Bootstrap -->
+  <script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+  <!-- Sparkline Chart -->
+  <script src="{{url_for('static', filename='js/charts/sparkline/jquery.sparkline.min.js')}}"></script>
+  <!-- App -->
+  <script src="{{url_for('static', filename='js/app.js')}}"></script>
+  <script src="{{url_for('static', filename='js/app.plugin.js')}}"></script>
+  <script src="{{url_for('static', filename='js/app.data.js')}}"></script>
+  <script src="{{url_for('static', filename='js/slimscroll/jquery.slimscroll.min.js')}}" cache="false"></script>
+  <!-- Sparkline Chart -->
+  <script src="{{url_for('static', filename='js/charts/sparkline/jquery.sparkline.min.js')}}"></script>
+  <!-- Easy Pie Chart -->
+  <script src="{{url_for('static', filename='js/charts/easypiechart/jquery.easy-pie-chart.js')}}"></script>
+  <!-- Morris -->
+  <script src="{{url_for('static', filename='js/charts/morris/raphael-min.js')}}" cache="false"></script>
+  <script src="{{url_for('static', filename='js/charts/morris/morris.min.js')}}" cache="false"></script>
+ 
+ 
+      
+  
+   
+ 
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+</body>
+</html>
